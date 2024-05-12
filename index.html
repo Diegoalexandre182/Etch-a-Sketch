@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Etch-A-Sketch</title>
 </head>
 <body>
+    <main>
+        <div class="toolbar">
+            <h2>Tools</h2>
+            <div>
+                <label for="drawColor">Draw:</label>
+                <input type="radio" name="options" id="drawColor" checked>
+                <label for="color">Color:</label>
+                <input type="color" name="options" id="color">
+            </div>
+
+            <div>
+                <label for="rainbow">Rainbow:</label>
+                <input type="radio" name="options" id="rainbow">
+            </div>
+
+            <div>
+                <label for="shader">Shader: </label>
+                <input type="radio" name="options" id="shader">
+            </div>
+
+            <div>
+                <label for="erase">Eraser:</label>
+                <input type="radio" name="options" id="erase">
+            </div>
+        </div>
+        <div class="container">
+            <div class="grid">
+
+            </div>
+            <h1>Etch-A-Sketch</h1>
+        </div>
+    </main>
     
     <script defer src="./code.js"></script>
 </body>
