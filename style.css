@@ -1,5 +1,6 @@
 :root {
     --main-color: rgb(160, 201, 232);
+    --light-gray: rgb(190, 189, 189);
     --yellow-100: rgb(254, 236, 0);
     --blue-light: rgb(223, 231, 239);
     --red-medium: rgb(169, 1, 63);
@@ -16,23 +17,18 @@ html,
 body {
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-family: cursive; */
     color: var(--blue-light);
+    background-color: var(--red-medium);
 }
 
 main {
-    border: 1px solid black;
-    height: 80vh;
-    width: 50vw;
+    width: 970px;
     display: flex;
-}
-
-.toolbar {
-    border: 1px solid rgb(187, 47, 47);
-    background-color: var(--red-medium);
-    
+    min-height: fit-content;
 }
 
 .container {
@@ -42,11 +38,80 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+    border-radius: 10%;
 }
 
 .grid {
-    width: 80%;
-    height: 80%;
+    background-color: var(--light-gray);
+    border-radius: 40px;
+    width: 850px;
+    min-height: 600px;
+    margin-top: 50px;
     border: 1px solid black;
 }
+
+.toolbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid rgb(187, 47, 47); */
+    font-size: 2rem;
+}
+
+.toolbar h1 {
+    margin-bottom: 30px;
+}
+
+
+.tools {
+    border: 3px solid var(--blue-light);
+    padding: 10px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: baseline;
+    font-size: 1.4rem;
+}
+
+input[type=radio]{
+    width: 20px;
+    height: 20px;
+}
+.btnWrapper{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.377);
+}
+.btnWrapper label:hover {
+    cursor: pointer;
+}
+
+.containerBtn {
+    width: 100%;
+    margin-top: auto;
+    padding-bottom: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gridBtn {
+    width: 150px;
+    height: 150px;
+    /* background-color: var(--yellow-100); */
+    background: radial-gradient(circle, var(--yellow-100)60%, rgb(228, 221, 13)30% );
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin: 10px;
+    border: 2px dashed var(--main-color);
+    /* box-shadow: 0px 9px 5px 0px rgba(0, 0, 0, 0.137); */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(126, 126, 6);
+
+}
+
