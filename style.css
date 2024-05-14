@@ -29,6 +29,10 @@ main {
     width: 970px;
     display: flex;
     min-height: fit-content;
+    border-radius: 10%;
+
+    box-shadow: 0px 9px 5px 0px rgba(0, 0, 0, 0.719);
+
 }
 
 .container {
@@ -48,7 +52,8 @@ main {
     width: 850px;
     min-height: 600px;
     margin-top: 50px;
-    border: 1px solid black;
+    border: 2px solid var(--blue-light);
+    outline: 3px solid rgba(118, 148, 172, 0.753);
 }
 
 .toolbar {
@@ -76,18 +81,43 @@ main {
     font-size: 1.4rem;
 }
 
-input[type=radio]{
-    width: 20px;
-    height: 20px;
-}
-.btnWrapper{
+
+.radio{
     display: flex;
     align-items: center;
     gap: 4px;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.377);
 }
-.btnWrapper label:hover {
+.radio:hover {
     cursor: pointer;
+}
+
+.radioNew {
+    width: 1.25em;
+    height: 1.25em;
+    border: 2px solid #d8e4e2;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.radioNew::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: var(--yellow-100);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.15s;
+}
+
+.inpRadio:checked + .radioNew::after {
+    transform: scale(1);
+}
+
+.inpRadio {
+    display: none;
+
 }
 
 .containerBtn {
@@ -99,19 +129,26 @@ input[type=radio]{
     align-items: center;
 }
 
+
 .gridBtn {
     width: 150px;
     height: 150px;
-    /* background-color: var(--yellow-100); */
-    background: radial-gradient(circle, var(--yellow-100)60%, rgb(228, 221, 13)30% );
+    background: radial-gradient(circle, var(--yellow-100)60%, rgb(228, 221, 13)10%);
     border-radius: 50%;
     flex-shrink: 0;
     margin: 10px;
     border: 2px dashed var(--main-color);
-    /* box-shadow: 0px 9px 5px 0px rgba(0, 0, 0, 0.137); */
     font-size: 1.5rem;
     font-weight: bold;
     color: rgb(126, 126, 6);
+}
 
+.gridBtn:hover {
+    cursor: pointer;
+    color: rgba(126, 126, 6, 0.541);
+}
+
+.gridBtn:active {
+    transform: translateY(5px);
 }
 

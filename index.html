@@ -25,24 +25,40 @@
 
                     <div class="tools">
 
-                        <div class="btnWrapper">
-                            <label for="drawColor">Draw:</label>
-                            <input type="radio" name="options" id="drawColor" checked>
-                            <label for="color">Color:</label>
-                            <input type="color" name="options" id="color">
-                        </div> |
-                        <div class="btnWrapper">
-                            <label for="rainbow">Rainbow:</label>
-                            <input type="radio" name="options" id="rainbow">
-                        </div>|
-                        <div class="btnWrapper">
-                            <label for="shader">Shader: </label>
-                            <input type="radio" name="options" id="shader">
-                        </div>|
-                        <div class="btnWrapper">
-                            <label for="erase">Eraser:</label>
-                            <input type="radio" name="options" id="erase">
-                        </div>
+                        <label for="drawRadio" class="radio">
+                            Draw:
+                            <input type="radio" name="radioGroup" id="drawRadio" value="draw" class="inpRadio" checked>
+                            
+                            <div class="radioNew"></div>
+
+                            <label for="colorInp">
+                                Color:
+                                <input type="color" name="colorInp" id="colorInp">
+                            </label>
+
+                        </label>|
+
+                        <label for="rainbowInp" class="radio">
+                            Rainbow:
+                            <input type="radio" name="radioGroup" id="rainbowInp" value="rainbow" class="inpRadio">
+
+                            <div class="radioNew"></div>
+                        </label>|
+
+                        <label for="shaderRadio" class="radio">
+                            Shader:
+                            <input type="radio" name="radioGroup" id="shaderRadio" value="shader" class="inpRadio">
+
+                            <div class="radioNew"></div>
+                        </label>|
+
+                        <label for="eraserRadio" class="radio">
+                            Eraser:
+                            <input type="radio" name="radioGroup" id="eraserRadio" value="eraser" class="inpRadio">
+
+                            <div class="radioNew"></div>
+                        </label>
+
                     </div>
                 </div>
 
