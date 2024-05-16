@@ -50,10 +50,15 @@ main {
     background-color: var(--light-gray);
     border-radius: 40px;
     width: 850px;
-    min-height: 600px;
+    height: 650px;
     margin-top: 50px;
     border: 2px solid var(--blue-light);
     outline: 3px solid rgba(118, 148, 172, 0.753);
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    gap: 0;
 }
 
 .toolbar {
@@ -152,16 +157,12 @@ main {
     transform: translateY(5px);
 }
 
-footer {
-    margin-top: 10px;
-}
-
 footer a {
+    margin-top: 10px;
     display: flex;
-    justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: inherit;
+    color: rgba(255, 255, 255, 0.445);
 }
 
 footer img{

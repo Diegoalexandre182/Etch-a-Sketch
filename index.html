@@ -11,13 +11,18 @@
         
         <div class="container">
 
-            <div class="grid">
+            <div class="grid" id="grid">
 
             </div>
 
             <div class="containerBtn">
 
                 <button class="gridSize gridBtn">Grid Size</button>
+
+                <dialog id="modal"> <p>Enter the Grid Size </p>
+                    <p><input type="number" name="gridNumber" id="gridNumber"  max="100" placeholder="min 16 max 100"></p>
+                    <input type="button" value="OK" id="modalBtn">
+                </dialog>
 
                 <div class="toolbar">
 
@@ -62,7 +67,7 @@
                     </div>
                 </div>
 
-                <button class="newGrid gridBtn">New Grid</button>
+                <button class="clearGrid gridBtn">Clear Grid</button>
                 
             </div>
         </div>
