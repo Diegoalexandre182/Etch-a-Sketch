@@ -64,8 +64,18 @@ function newGrid(){
     })
 }
 
-grid.addEventListener('mousemove', (event)=>{
-    if(event.target.tagName.toLowerCase() === 'div'){
-        event.target.style.backgroundColor = 'black'
-    }
+
+grid.addEventListener('mousedown', ()=>{
+    grid.addEventListener('mouseover',startLine)
+
 })
+
+grid.addEventListener('mouseup', stopLine)
+
+function startLine(e){
+    e.target.style.backgroundColor = 'black'
+}   
+
+function stopLine(){
+    grid.removeEventListener('mouseover',startLine)
+}

@@ -49,8 +49,8 @@ main {
 .grid {
     background-color: var(--light-gray);
     border-radius: 40px;
-    width: 850px;
     height: 650px;
+    width: 750px;
     margin-top: 50px;
     border: 2px solid var(--blue-light);
     outline: 3px solid rgba(118, 148, 172, 0.753);
@@ -74,7 +74,6 @@ main {
     margin-bottom: 30px;
 }
 
-
 .tools {
     border: 3px solid var(--blue-light);
     padding: 10px;
@@ -85,7 +84,6 @@ main {
     align-items: baseline;
     font-size: 1.4rem;
 }
-
 
 .radio{
     display: flex;
