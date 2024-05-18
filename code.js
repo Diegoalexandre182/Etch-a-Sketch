@@ -4,10 +4,18 @@ const modal = document.querySelector('#modal')
 const modalBtn = document.querySelector('#modalBtn')
 const gridNumber = document.querySelector('#gridNumber')
 const newGridBtn = document.querySelector('.clearGrid')
-
+const radioBtns = document.querySelectorAll('input[name = "radioGroup"]')
 let num = 0
+let lineColor 
 
-document.addEventListener('onload', drawGrid(16))
+radioBtns.forEach( radio =>{
+    radio.addEventListener('change', ()=>{
+        getSelectedOpt(radio.value)
+    })
+})
+
+
+document.addEventListener('onload', drawGrid(16), getSelectedOpt('draw')) // Draw the first grid
 
 gridSizeBtn.addEventListener('click', ()=> {
     modal.showModal()
@@ -64,16 +72,34 @@ function newGrid(){
     })
 }
 
-
+function getSelectedOpt(opt = "draw"){
+    if (opt == 'draw') {
+        document.querySelector('input[type ="color"]').addEventListener('input', event =>{
+            lineColor = event.target.value
+        })
+        console.log(opt)
+        lineColor = document.querySelector('input[type ="color"]').value
+    }
+    if (opt == 'rainbow') {
+        console.log(opt)
+    }
+    if (opt === 'shader') {
+        console.log(opt)
+    }
+    if (opt === 'eraser') {
+        lineColor = "var(--light-gray)"
+    }
+}
+// ----------------------------------- MOUSE EVENT -----------------------------
 grid.addEventListener('mousedown', ()=>{
     grid.addEventListener('mouseover',startLine)
-
 })
 
 grid.addEventListener('mouseup', stopLine)
 
 function startLine(e){
-    e.target.style.backgroundColor = 'black'
+    e.target.style.backgroundColor = `${lineColor}`
+    console.log(lineColor)
 }   
 
 function stopLine(){
