@@ -6,7 +6,7 @@ const gridNumber = document.querySelector('#gridNumber')
 const newGridBtn = document.querySelector('.clearGrid')
 const radioBtns = document.querySelectorAll('input[name = "radioGroup"]')
 let num = 0
-let lineColor 
+let lineColor, rainbowHUE = 0
 
 radioBtns.forEach( radio =>{
     radio.addEventListener('change', ()=>{
@@ -79,9 +79,12 @@ function getSelectedOpt(opt = "draw"){
         })
         console.log(opt)
         lineColor = document.querySelector('input[type ="color"]').value
+        grid.removeEventListener('mouseover', rainbowColor)
     }
     if (opt == 'rainbow') {
-        console.log(opt)
+        
+        grid.addEventListener('mouseover', rainbowColor)
+        
     }
     if (opt === 'shader') {
         console.log(opt)
@@ -90,18 +93,26 @@ function getSelectedOpt(opt = "draw"){
         lineColor = "var(--light-gray)"
     }
 }
+
+function rainbowColor(){
+    rainbowHUE += 1
+    if(rainbowHUE > 350) rainbowHUE = 0
+    console.log(rainbowHUE)
+    
+    return lineColor = `hsl(${rainbowHUE}, 80%, 45%)`
+    
+}
 // ----------------------------------- MOUSE EVENT -----------------------------
 grid.addEventListener('mousedown', ()=>{
     grid.addEventListener('mouseover',startLine)
 })
 
-grid.addEventListener('mouseup', stopLine)
-
 function startLine(e){
     e.target.style.backgroundColor = `${lineColor}`
-    console.log(lineColor)
 }   
 
+grid.addEventListener('mouseup', stopLine)
+
 function stopLine(){
-    grid.removeEventListener('mouseover',startLine)
+    grid.removeEventListener('mouseover',startLine, )
 }
