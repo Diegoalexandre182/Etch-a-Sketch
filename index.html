@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" >
     <title>Etch-A-Sketch</title>
 </head>
 <body>
@@ -14,15 +15,15 @@
             <div class="grid" id="grid">
 
             </div>
+            <dialog id="modal" class="modal"> <p>Enter the Grid Size:</p>
+                <p><input type="number" name="gridNumber" id="gridNumber"  max="100" placeholder="min 16 max 100"></p>
+                <input type="button" value="OK" id="modalBtn" class="okModalBtn">
+            </dialog>
 
             <div class="containerBtn">
 
                 <button class="gridSize gridBtn">Grid Size</button>
 
-                <dialog id="modal"> <p>Enter the Grid Size </p>
-                    <p><input type="number" name="gridNumber" id="gridNumber"  max="100" placeholder="min 16 max 100"></p>
-                    <input type="button" value="OK" id="modalBtn">
-                </dialog>
 
                 <div class="toolbar">
 
@@ -47,7 +48,7 @@
                             Rainbow:
                             <input type="radio" name="radioGroup" id="rainbowInp" value="rainbow" class="inpRadio">
 
-                            <div class="radioNew"></div>
+                            <div class="radioNew radioRainbow"></div>
                         </label>|
 
                         <label for="shaderRadio" class="radio">

@@ -2,9 +2,9 @@
     --main-color: rgb(160, 201, 232);
     --light-gray: rgb(190, 189, 189);
     --yellow-100: rgb(254, 236, 0);
+    --yellow-200: rgb(255, 236, 0);
     --blue-light: rgb(223, 231, 239);
     --red-medium: rgb(169, 1, 63);
-
 }
 
 * {
@@ -20,7 +20,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* font-family: cursive; */
     color: var(--blue-light);
     background-color: var(--red-medium);
 }
@@ -30,9 +29,46 @@ main {
     display: flex;
     min-height: fit-content;
     border-radius: 10%;
-
     box-shadow: 0px 9px 5px 0px rgba(0, 0, 0, 0.719);
+}
+.modal{
+    padding: 20px;
+    margin: auto;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 2rem;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
 
+.modal::backdrop {
+	background: black;
+	opacity: .4;
+}
+
+
+input[type='number']{
+    font-size: 0.9em;
+    width: 210px;
+    text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+
+display: none;
+}
+
+.okModalBtn{
+    margin-top: 20px;
+    padding: 10px 40px;
+    background-color: var(--yellow-100);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.okModalBtn:active{
+    background-color: rgb(184, 173, 19);
 }
 
 .container {
@@ -42,12 +78,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     border-radius: 10%;
 }
-
 .grid {
-    background-color: var(--light-gray);
+    background-color: rgb(255, 255, 255);
     border-radius: 40px;
     height: 650px;
     width: 750px;
@@ -66,7 +100,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* border: 1px solid rgb(187, 47, 47); */
     font-size: 2rem;
 }
 
@@ -111,7 +144,11 @@ main {
     background-color: var(--yellow-100);
     border-radius: 50%;
     transform: scale(0);
-    transition: transform 0.15s;
+    transition: transform 0.15s, background-color 0.3s;
+}
+
+.radioNew.radioRainbow::after{
+    background-color: var(--yellow-200);
 }
 
 .inpRadio:checked + .radioNew::after {
@@ -120,7 +157,6 @@ main {
 
 .inpRadio {
     display: none;
-
 }
 
 .containerBtn {
